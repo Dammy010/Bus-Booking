@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-weight: 600;
+    color: #34495e;
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+select, input {
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+select:focus, input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+    background-color: #fff;
+}
+
+.price-preview {
+    background: rgba(236, 240, 241, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.price-preview p {
+    color: #34495e;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.price-preview span {
+    font-weight: 600;
+    color: #e67e22;
+}
+
+button {
+    padding: 12px;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #2980b9, #1f6391);
+    transform: translateY(-2px);
+}
+
+.booking-details {
+    margin-top: 25px;
+    padding: 15px;
+    background: rgba(236, 240, 241, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.booking-details h2 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+#confirmation {
+    color: #34495e;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+#confirmation strong {
+    color: #e74c3c;
+    font-weight: 700;
+}
+
+#downloadTicket {
+    background: linear-gradient(90deg, #2ecc71, #27ae60);
+    margin-top: 15px;
+}
+
+#downloadTicket:hover {
+    background: linear-gradient(90deg, #27ae60, #219653);
+}
+
+#restartButton {
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+    margin-top: 15px;
+}
+
+#restartButton:hover {
+    background: linear-gradient(90deg, #c0392b, #a93226);
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
