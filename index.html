@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bus Booking App</title>
+    <title>Bus Booking System</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Akin's Bus Booking App🚍</h1>
+    <!-- Landing Page -->
+    <div id="landingPage" class="landing-page">
+        <h1>Welcome to Naija Bus Booking</h1>
+        <p>Travel Nigeria with ease! Book your bus tickets to any state, anytime.</p>
+        <button id="startBooking">Book Now</button>
+    </div>
+
+    <!-- Booking System -->
+    <div id="bookingContainer" class="container" style="display: none;">
+        <h1>Bus Booking System</h1>
         <form id="bookingForm">
             <label for="recentLocation">Recent Location:</label>
             <select id="recentLocation" name="recentLocation" required>
@@ -41,8 +49,17 @@
         <div id="bookingDetails" class="booking-details">
             <h2>Your Booking</h2>
             <p id="confirmation"></p>
+            <p id="addressDisplay"></p>
             <button id="downloadTicket" style="display: none;">Download Ticket</button>
-            <button id="clearButton" style="display: none;">Clear</button>
+            <button id="restartButton" style="display: none;">Restart</button>
+        </div>
+
+        <div id="addressModal" class="modal">
+            <div class="modal-content">
+                <h3>Enter Pickup Address</h3>
+                <textarea id="addressInput" placeholder="Enter your pickup address..." rows="4" required></textarea>
+                <button id="confirmAddress">Confirm Booking</button>
+            </div>
         </div>
     </div>
 

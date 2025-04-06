@@ -14,6 +14,51 @@ body {
     padding: 20px;
 }
 
+/* Landing Page Styling */
+.landing-page {
+    text-align: center;
+    color: #2c3e50;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    transition: opacity 0.5s ease;
+}
+
+.landing-page h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.landing-page p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #34495e;
+}
+
+.landing-page button {
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.landing-page button:hover {
+    background: linear-gradient(90deg, #2980b9, #1f6391);
+    transform: translateY(-3px);
+}
+
+/* Booking Container Styling */
 .container {
     background: rgba(255, 255, 255, 0.95);
     padding: 30px;
@@ -22,6 +67,7 @@ body {
     width: 100%;
     max-width: 450px;
     text-align: center;
+    transition: opacity 0.5s ease;
 }
 
 h1 {
@@ -113,7 +159,7 @@ button:hover {
     margin-bottom: 10px;
 }
 
-#confirmation {
+#confirmation, #addressDisplay {
     color: #34495e;
     font-size: 16px;
     line-height: 1.6;
@@ -122,6 +168,10 @@ button:hover {
 #confirmation strong {
     color: #e74c3c;
     font-weight: 700;
+}
+
+#addressDisplay {
+    font-style: italic;
 }
 
 #downloadTicket {
@@ -133,22 +183,81 @@ button:hover {
     background: linear-gradient(90deg, #27ae60, #219653);
 }
 
-#clearButton {
+#restartButton {
     background: linear-gradient(90deg, #e74c3c, #c0392b);
     margin-top: 15px;
 }
 
-#clearButton:hover {
+#restartButton:hover {
     background: linear-gradient(90deg, #c0392b, #a93226);
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+#addressInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ecf0f1;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: vertical;
+}
+
+#confirmAddress {
+    margin-top: 15px;
+    padding: 10px;
+    background: linear-gradient(90deg, #2ecc71, #27ae60);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 100%;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+#confirmAddress:hover {
+    background: linear-gradient(90deg, #27ae60, #219653);
+    transform: translateY(-2px);
+}
+
 @media (max-width: 480px) {
-    .container {
+    .landing-page, .container {
         padding: 20px;
         max-width: 100%;
     }
 
-    h1 {
-        font-size: 24px;
+    .landing-page h1 {
+        font-size: 28px;
+    }
+
+    .landing-page p {
+        font-size: 16px;
     }
 }
