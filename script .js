@@ -1,3 +1,4 @@
+// Mock Nigerian states (alphabetically ordered)
 const nigerianStates = [
     "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno",
     "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "Gombe", "Imo", "Jigawa",
@@ -6,7 +7,7 @@ const nigerianStates = [
     "Zamfara", "Abuja"
 ];
 
-
+// Populate dropdowns with Nigerian states
 function populateDropdowns() {
     const recentLocation = document.getElementById('recentLocation');
     const destination = document.getElementById('destination');
@@ -24,6 +25,7 @@ function populateDropdowns() {
     });
 }
 
+// Calculate price based on "distance" (alphabetical difference)
 function calculatePrice(recentLocation, destination) {
     const basePrice = 3000;
     const priceIncrement = 2000; 
@@ -33,9 +35,10 @@ function calculatePrice(recentLocation, destination) {
     return basePrice + (distance * priceIncrement);
 }
 
-
+// Initialize dropdowns on page load
 window.onload = populateDropdowns;
 
+// Function to update price preview
 function updatePricePreview() {
     const recentLocation = document.getElementById('recentLocation').value;
     const destination = document.getElementById('destination').value;
@@ -54,6 +57,7 @@ function updatePricePreview() {
     }
 }
 
+// Add event listeners for real-time price updates
 document.getElementById('recentLocation').addEventListener('change', updatePricePreview);
 document.getElementById('destination').addEventListener('change', updatePricePreview);
 document.getElementById('seats').addEventListener('input', updatePricePreview);
@@ -95,12 +99,13 @@ document.getElementById('bookingForm').addEventListener('submit', function(event
     `;
 
     document.getElementById('downloadTicket').style.display = 'block';
-    document.getElementById('restartButton').style.display = 'block';
+    document.getElementById('clearButton').style.display = 'block';
 
     this.reset();
-    updatePricePreview(); 
+    updatePricePreview(); // Clear price preview after form clear
 });
 
+// Download ticket as PDF
 document.getElementById('downloadTicket').addEventListener('click', function() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
@@ -114,9 +119,10 @@ document.getElementById('downloadTicket').addEventListener('click', function() {
     doc.save('bus_ticket.pdf');
 });
 
-document.getElementById('restartButton').addEventListener('click', function() {
+// Clear functionality
+document.getElementById('clearButton').addEventListener('click', function() {
     document.getElementById('confirmation').innerHTML = '';
     document.getElementById('downloadTicket').style.display = 'none';
     this.style.display = 'none';
-    updatePricePreview(); 
+    updatePricePreview(); // Reset price preview
 });
